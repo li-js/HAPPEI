@@ -1,0 +1,32 @@
+{
+    "data": {
+    },
+    "solver": {
+        "base_lr": 0.1,
+        "max_iter": 50001,
+        "momentum": 0.9,
+        "random_seed": 5,
+        "clip_gradients": 0.1,
+        "gamma": 0.1,
+        "stepsize": 20000,
+        "weights": ""
+    },
+    "logging": {
+        "display_interval": 20,
+        "snapshot_prefix": "summation",
+        "snapshot_interval": 10000,
+        "schematic_path": "summation.png",
+        "graph_prefix": "summation_history",
+        "graph_interval": 500,
+        "log_file": "log_summation.txt",
+	"result_file": "result.txt"
+    },
+    "net": {
+        "batch_size": 1,
+        "init_range": 0.1,
+        "min_len": 5,
+        "max_len": 15,
+        "mem_cells": 250,
+        "lstm_num_cells": 250
+    }
+}
