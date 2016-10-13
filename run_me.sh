@@ -39,7 +39,7 @@ cd scripts; matlab -nodesktop -nosplash -r "process_scene_feat_testing;  exit"; 
 # install caffe in at the current direction, cp caffe_script/feat_extact.cpp caffe/tools/
 git clone https://github.com/BVLC/caffe.git
 cp scripts/feat_extract_to_file.cpp ./caffe/tools/ 
-cd caffe; make -j; cd -
+cd caffe; mkdir build; cd build; cmake ../; make -j; cd ../../; # make sure caffe builds well
 
 ./caffe/build/tools/feat_extract_to_file.bin ./models/model1.caffemodel ./models/mem_test.prototxt pool5 \
 data/list_det_crop_align_filled.txt ./data/ ./data/feat1.txt
@@ -50,5 +50,5 @@ data/list_det_crop_align_filled.txt ./data/ ./data/feat2.txt
 
 #============Step 8: Test with LSTM====================
 #install apollocaffe
-git clone apollocaffe
+git clone apollocaffe # make sure apollocaffe builds well 
 python scripts/test_lstm.py --config models/config.json --gpu 0
