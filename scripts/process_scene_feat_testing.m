@@ -35,7 +35,7 @@ data_dr=data_all*Trans;
 data=importdata('../data/list_all_test.txt');
 Len=length(data);
 feat=zeros(Len,dim);
-for f=1:Lenpre
+for f=1:Len
     disp([f,Len])
     key=strrep(data{f},'.jpg', '.mat');
     key=strrep(key,'jpeg', '.mat');
