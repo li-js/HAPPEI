@@ -1,7 +1,7 @@
 import numpy as np
 import json
 import itertools
-
+import os
 import apollocaffe
 from apollocaffe.layers import NumpyData, LstmUnit, Concat, InnerProduct, Filler
 
