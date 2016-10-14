@@ -55,7 +55,7 @@ def evaluate(config, test_data):
 
     residuals=[]
     fid=open('result.txt','w');
-    tar_dir='result_ord/'
+    tar_dir='result/'
     if not os.path.isdir(tar_dir): os.mkdir(tar_dir)
     for idx in xrange(len(test_data['labels'])):
         feat=test_data['feats'][idx]
@@ -73,7 +73,7 @@ def evaluate(config, test_data):
             predictions.append(prediction)
         print 'File: %s, Predicted: %0.5f' % (label, np.array(predictions).mean()) 
         fid.write('%s %0.5f\n' % (label, np.array(predictions).mean()))
-        with open('result_ord/'+label.replace('.jpg', '.txt').replace('.jpeg', '.txt').replace('.png', '.txt'),'w') as ff: ff.write('%0.5f\n'%np.array(predictions).mean())
+        with open(tar_dir+label.replace('.jpg', '.txt').replace('.jpeg', '.txt').replace('.png', '.txt'),'w') as ff: ff.write('%0.5f\n'%np.array(predictions).mean())
     print "%d images processed using %s" % (len(test_data['labels']),net_add)
     fid.close()
 
