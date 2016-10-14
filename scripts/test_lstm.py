@@ -50,12 +50,11 @@ def evaluate(config, test_data):
     feat=np.hstack((feat,feat2))
     print feat.shape
     evaluate_forward(eval_net, net_config, feat, test_data['scene_feats'][0])
-    net_add="%s_%d.h5" % (config["logging"]["snapshot_prefix"], config["solver"]["max_iter"] - 1)
     net_add='models/model_lstm.h5'
     eval_net.load(net_add)
 
     residuals=[]
-    fid=open(config["logging"]["result_file"],'w');
+    fid=open('result.txt','w');
     for idx in xrange(len(test_data['labels'])):
         feat=test_data['feats'][idx]
         feat2=test_data['feats2'][idx]
