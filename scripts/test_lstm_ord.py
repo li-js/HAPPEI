@@ -60,7 +60,8 @@ def evaluate(config, test_data):
 
     residuals=[]
     fid=open('result_ord.txt','w')
-    os.mkdir('result_ord/')
+    tar_dir='result_ord/'
+    if not os.path.isdir(tar_dir): os.mkdir(tar_dir)
     for idx in xrange(len(test_data['labels'])):
         feat=test_data['feats'][idx]
         feat2=test_data['feats2'][idx]
