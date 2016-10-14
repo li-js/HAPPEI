@@ -54,7 +54,6 @@ def evaluate(config, test_data):
     feat=test_data['feats'][0]
     feat2=test_data['feats2'][0]
     feat=np.hstack((feat,feat2))
-    print feat.shape
     evaluate_forward(eval_net, net_config, feat, test_data['scene_feats'][0])
     net_add='models/model_lstm_ord.h5'
     eval_net.load(net_add)
@@ -67,7 +66,6 @@ def evaluate(config, test_data):
         feat2=test_data['feats2'][idx]
         feat=np.hstack((feat,feat2))
         scene_feat=test_data['scene_feats'][idx]
-        print feat.shape
 
         label=test_data['labels'][idx]
         predictions=[]
@@ -76,7 +74,6 @@ def evaluate(config, test_data):
         some_permu=all_permu[0:min(10,len(all_permu))]
         for idx in some_permu:
             prediction = evaluate_forward(eval_net, net_config, feat[idx,:],scene_feat)
-            print prediction
             prediction = np.array(prediction).sum()
             predictions.append(prediction)
         print 'File: %s, Predicted: %0.5f' % (label, np.array(predictions).mean()) 
