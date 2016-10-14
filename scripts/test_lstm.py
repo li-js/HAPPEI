@@ -88,7 +88,7 @@ def main():
     list_crop_add=data_root+'list_det_crop_align_filled.txt'
     feat_add=data_root+'feat1.txt'
 
-    train_gt=np.loadtxt(list_add, dtype={'names': ('name', 'label'), 'formats': ('S200', 'i4')})
+    train_gt=np.loadtxt(list_add, dtype={'names': ('name', ), 'formats': ('S200', )})
     train_crop_gt=np.loadtxt(list_crop_add, dtype={'names': ('name', 'label'), 'formats': ('S200', 'i4')})
     train_feat=np.loadtxt(feat_add)
 
