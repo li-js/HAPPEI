@@ -14,7 +14,7 @@
     "logging": {
         "display_interval": 20,
         "snapshot_prefix": "model",
-        "snapshot_interval": 10000,
+        "snapshot_interval": 10000
     },
     "net": {
         "batch_size": 1,
