@@ -41,10 +41,10 @@ git clone https://github.com/BVLC/caffe.git
 cp scripts/feat_extract_to_file.cpp ./caffe/tools/ 
 cd caffe; mkdir build; cd build; cmake ../; make -j; cd ../../; # make sure caffe builds well
 
-./caffe/build/tools/feat_extract_to_file.bin ./models/model1.caffemodel ./models/mem_test.prototxt pool5 \
+./caffe/build/tools/feat_extract_to_file ./models/model1.caffemodel ./models/mem_test.prototxt pool5 \
 data/list_det_crop_align_filled.txt ./data/ ./data/feat1.txt
 
-./caffe/build/tools/feat_extract_to_file.bin ./models/model2.caffemodel ./models/mem_test.prototxt pool5 \
+./caffe/build/tools/feat_extract_to_file ./models/model2.caffemodel ./models/mem_test.prototxt pool5 \
 data/list_det_crop_align_filled.txt ./data/ ./data/feat2.txt
 
 
