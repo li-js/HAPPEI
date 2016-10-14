@@ -19,6 +19,7 @@
     },
     "net": {
         "batch_size": 1,
+	"init_range": 0.1,
         "mem_cells": 250,
         "lstm_num_cells": 250
     }
