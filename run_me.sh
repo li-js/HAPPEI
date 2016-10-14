@@ -53,3 +53,4 @@ data/list_det_crop_align_filled.txt ./data/ ./data/feat2.txt
 git clone http://github.com/Russell91/apollocaffe.git # make sure apollocaffe builds well 
 
 python scripts/test_lstm.py --config models/config.json --gpu 0
+python scripts/test_lstm_ord.py --config models/config.json --gpu 0
