@@ -49,6 +49,7 @@ data/list_det_crop_align_filled.txt ./data/ ./data/feat2.txt
 
 
 #============Step 8: Test with LSTM====================
-#install apollocaffe
-git clone apollocaffe # make sure apollocaffe builds well 
+#install apollocaffe, instructions available at http://apollocaffe.com/
+git clone http://github.com/Russell91/apollocaffe.git # make sure apollocaffe builds well 
+
 python scripts/test_lstm.py --config models/config.json --gpu 0
