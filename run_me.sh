@@ -18,7 +18,7 @@ cd scripts; matlab -nodesktop -nosplash -r "crop_det_test;  exit"; cd -;
 
 
 #============Step 3: Face landmark detection===============
-echo "Any face landmark detector is OK. To reproduce the result, use the detection results at ./data/det_rects_test.txt"
+echo "Any face landmark detector is OK. To reproduce the result, use the detection results at ./data/landmark_pts.gz"
 tar -xvzf ./data/landmark_pts.gz -C ./data
 cp ./data/landmark_pts/* ./data/det_crop_test/ -v
 
