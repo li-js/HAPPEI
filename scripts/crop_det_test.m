@@ -45,7 +45,7 @@ for f=1:length(im_list)
 end
 
 
-key='3121781_150da6c168_z.jpg'   % this testing image has no face fulliing the above criterion. We take one face from the detection result
+key='3121781_150da6c168_z.jpg';   % this testing image has no face fulliing the above criterion. We take one face from the detection result
 map=strcmp(key,det_rects.textdata);
 conf=det_rects.data(map,1);
 rects=det_rects.data(map,2:5);
