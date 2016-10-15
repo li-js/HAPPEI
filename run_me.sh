@@ -31,16 +31,17 @@ cd scripts; matlab -nodesktop -nosplash -r "align_faces;  exit"; cd -;
 cd scripts; matlab -nodesktop -nosplash -r "generate_list;  exit"; cd -; 
 
 
-#============Step 6: Get dimension reduce CENTRIST feature=====
+#============Step 6: Get dimension reduced CENTRIST feature=====
 cd scripts; matlab -nodesktop -nosplash -r "process_scene_feat_testing;  exit"; cd -; 
 
 
 #============Step 7: Extract face feature from CNN=====
-# install caffe in at the current direction, cp caffe_script/feat_extact.cpp caffe/tools/
+# install caffe in the current directory, copy scripts/feat_extract_to_file.cpp to ./caffe/tools/
 git clone https://github.com/BVLC/caffe.git
 cp scripts/feat_extract_to_file.cpp ./caffe/tools/ 
 cd caffe; mkdir build; cd build; cmake ../; make -j; cd ../../; # make sure caffe builds well
 
+# extract features with caffe models
 ./caffe/build/tools/feat_extract_to_file ./models/model1.caffemodel ./models/mem_test.prototxt pool5 \
 data/list_det_crop_align_filled.txt ./data/ ./data/feat1.txt
 
